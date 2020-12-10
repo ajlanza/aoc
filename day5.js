@@ -3,6 +3,8 @@ const input = require("fs").readFileSync("./day5.txt", "utf-8").trim().split('\r
 function part1(){
   let highest = 0;
   let temp = 0;
+  let total = 0;
+  let grandtotal = 523776
   let boardingPass = [];
   for(let i = 0; i < input.length; i++){
     boardingPass = input[i].split('');
@@ -28,11 +30,16 @@ function part1(){
       }
     }
   temp = front * 8 + right;
+  total += temp;
+  grandtotal = grandtotal - temp;
   if(temp > highest){
     highest = temp;
   }
-  console.log('highest: ', highest);
+  
   }
+  console.log('highest: ', highest);
+  let allRows = 1023 * (1023 +1) / 2;
+  console.log('all rows sum: ', allRows, 'total of ids: ', total, 'my Id: ', grandtotal / 3);
 }
 
 part1();
