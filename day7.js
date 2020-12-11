@@ -16,7 +16,8 @@ function part1(){
       let currentBag = {color: input[i].split('bags contain')[0]};
       let currentContents = input[i].split('bags contain')[1];
       bags.push(currentBag);
-      currentBag.contents = currentContents;   
+    //   currentBag.contents = currentContents.split(/ [\d] /); 
+      currentBag.contents = currentContents.split(/ bags./);   
     //   console.log('bag added: ', input[i].split("bags contain")[0]);
     }
   }
