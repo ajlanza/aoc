@@ -27,7 +27,9 @@ function part2(){
          input[i].match(/(hcl:#[0-9,a-f]{6})/) &&
          input[i].match(/(ecl:amb|ecl:blu|ecl:brn|ecl:gry|ecl:grn|ecl:hzl|ecl:oth)/) &&
          input[i].match(/(pid:\d{9})/) ) {
-        validPassports++;
+         validPassports++;
+         // pid match is returning a value with 10 digits...need to modify it to return only 
+         // values with 9 digits 
       }
     }
     console.log(validPassports);
