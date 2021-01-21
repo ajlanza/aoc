@@ -84,4 +84,30 @@ part1 = () => {
   console.log('Nice strings: ', niceStrings, ' Naughty strings: ', naughtyStrings);
 }
 
-part1();
+part2 = () => {
+    let niceStrings = 0;
+    for(let i = 0; i < input.length; i++){
+      let thisString = input[i];
+      let pairs = 0;
+      let repeatWithGap = 0
+      for(let j = 0; j < thisString.length; j++){
+        let char = thisString.charAt(j);
+        let nextChar = thisString.charAt(j + 1);
+        let charAfterGap = thisString.charAt(j + 2);
+        let thisPair = char + nextChar;
+        if(char === charAfterGap){
+            repeatWithGap++;
+        }
+        if(thisString.slice(j+2).includes(thisPair)){
+            pairs++;
+        }
+        if(repeatWithGap > 0 && pairs > 0) {
+            niceStrings++;
+            break;
+        }
+      }
+    }
+    console.log('Nice strings: ', niceStrings);
+  }
+
+part2();
