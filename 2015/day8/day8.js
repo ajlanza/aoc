@@ -24,4 +24,22 @@ part1 = () => {
   console.log(charactersOfCode - stringCharacters);
 }
 
+part2 = () => {
+    let charactersOfCode = 0;
+    let stringCharacters = 0;
+    for(let i = 0; i < list.length; i++){
+      let line = list[i];
+      let encodedCharacters = 0;
+      charactersOfCode += line.length;
+      for(let j = 0; j < line.length; j++){
+        if(line[j] === '\"' || line[j] === '\\'){
+          encodedCharacters += 1;
+        }
+      }
+      stringCharacters += line.length + encodedCharacters +2;
+    }
+    console.log(stringCharacters - charactersOfCode);
+  }
+
 part1();
+part2();
