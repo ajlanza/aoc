@@ -1,6 +1,6 @@
 import csv
 
-with open('day1\input.csv', 'r') as input_csv:
+with open('2022\day1\input.csv', 'r') as input_csv:
     csv_reader = csv.reader(input_csv)
     group = 0
     max_calories = 0
